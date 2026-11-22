@@ -6,3 +6,6 @@ __pycache__/
 .vercel
 Thumbs.db
 desktop.ini
+
+.vercel
+.env*
