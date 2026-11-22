@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><!-- 정보 입력 완료 후 이 줄을 지우면 검색엔진에 노출됩니다 -->
+<title>춘의역 부동산 | 춘의역탑부동산공인중개사사무소</title>
+<meta name="description" content="부천 원미구 춘의역 6번 출구 도보 1분. 아파트·단독·상가주택·상가·지식산업센터 매매·전세·월세. 대표 공인중개사 김영월이 상담부터 잔금까지 직접 진행합니다. ☎ 032-683-5949">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/chatbot.css">
+<style>
+/* ===== Design tokens (DESIGN.md: Reliable Metro Estate) ===== */
+:root{
+  --navy:#0F294A; --navy-hover:#1E3A8A;
+  --amber:#D97706; --amber-dark:#904D00;
+  --emerald:#0D9488; --verified:#059669; --verified-bg:#ECFDF5;
+  --canvas:#F8FAFC; --card:#FFFFFF; --subtle:#F1F5F9; --tint:#EFF4FF;
+  --border:#E2E8F0; --border-strong:#CBD5E1;
+  --text:#0F172A; --text-2:#475569; --muted:#94A3B8;
+  --r-sm:4px; --r-md:6px; --r-lg:8px; --r-xl:12px;
+  --shadow-hover:0 8px 24px -4px rgba(15,41,74,.08),0 2px 6px -2px rgba(15,41,74,.04);
+  --shadow-modal:0 20px 40px -8px rgba(15,41,74,.16);
+  --font:"Plus Jakarta Sans","Noto Sans KR",Pretendard,-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--canvas);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.625;word-break:keep-all;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.num{font-variant-numeric:tabular-nums}
+.container{max-width:1240px;margin:0 auto;padding:0 2rem}
+.section{padding:96px 0}
+.section.alt{background:var(--card)}
+.sec-head{text-align:center;max-width:760px;margin:0 auto 56px}
+.overline{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+h1,h2,h3{color:var(--navy);margin:0}
+h2{font-size:2.25rem;line-height:2.875rem;letter-spacing:-.02em;font-weight:800}
+h3{font-size:1.25rem;line-height:1.75rem;letter-spacing:-.01em;font-weight:700}
+.sec-head p{color:var(--text-2);margin:14px 0 0;font-size:1.0625rem}
+.ico{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ico.sm{width:16px;height:16px}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:var(--r-lg);font:600 15px/1 var(--font);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .15s,transform .15s,border-color .15s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{background:var(--navy-hover)}
+.btn-secondary{background:#fff;color:var(--navy);border-color:var(--border-strong)}
+.btn-secondary:hover{background:var(--subtle)}
+.btn-accent{background:var(--amber);color:#fff;box-shadow:0 2px 8px rgba(217,119,6,.2)}
+.btn-accent:hover{background:var(--amber-dark)}
+.btn-sm{height:40px;padding:0 16px;font-size:14px}
+
+/* ===== Chips ===== */
+.chip{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;padding:3px 8px;border-radius:var(--r-sm);border:1px solid transparent;line-height:1.4}
+.chip.sale{background:rgba(15,41,74,.08);color:var(--navy);border-color:rgba(15,41,74,.15)}
+.chip.jeonse{background:rgba(13,148,136,.08);color:var(--emerald);border-color:rgba(13,148,136,.2)}
+.chip.monthly{background:rgba(71,85,105,.08);color:#334155;border-color:rgba(71,85,105,.18)}
+.chip.ok{background:var(--verified-bg);color:var(--verified);border-color:#A7F3D0}
+.chip.tag{background:var(--card);color:var(--text-2);border-color:var(--border)}
+
+/* ===== Header ===== */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.hd{height:80px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-mark{width:40px;height:40px;border-radius:var(--r-lg);background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center}
+.brand b{display:block;font-size:1.2rem;letter-spacing:-.02em;color:var(--navy);line-height:1.1}
+.brand small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.08em;margin-top:3px}
+.gnb{display:flex;gap:2px}
+.gnb a{white-space:nowrap;padding:8px 11px;border-radius:var(--r-lg);font-size:14px;font-weight:600;color:var(--text-2);text-decoration:none}
+.gnb a:hover{background:var(--tint);color:var(--navy)}
+.hd-right{display:flex;align-items:center;gap:10px}
+.tel-pill{white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--tint);padding:8px 12px;border-radius:var(--r-lg);font-weight:800;color:var(--navy);text-decoration:none;font-size:15px}
+.tel-pill .ico{color:var(--amber)}
+
+/* ===== Hero ===== */
+.hero{padding:136px 0 96px;background:var(--canvas);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 400px at 85% 10%,rgba(15,41,74,.06),transparent 60%),radial-gradient(500px 300px at 0% 100%,rgba(217,119,6,.05),transparent 60%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.pledge{display:inline-flex;align-items:center;gap:8px;background:var(--verified-bg);color:var(--verified);border:1px solid #A7F3D0;border-radius:var(--r-sm);padding:6px 12px;font-size:13px;font-weight:700;margin-bottom:22px}
+.hero .kicker{font-size:14px;font-weight:700;color:var(--amber);letter-spacing:.04em;margin-bottom:10px}
+.hero h1{font-size:3rem;line-height:3.75rem;letter-spacing:-.025em;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero .desc{font-size:1.125rem;line-height:1.875rem;color:var(--text-2);margin:20px 0 28px;max-width:620px}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px}
+.feat .fi{width:36px;height:36px;border-radius:var(--r-lg);background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:10px;flex:none}
+.feat b{display:block;font-size:15px;color:var(--navy)}
+.feat span{font-size:13px;color:var(--text-2)}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.spec{margin-top:28px;padding-top:20px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.spec .lbl{font-size:13px;font-weight:700;color:var(--muted);margin-right:4px}
+
+/* broker card */
+.broker{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--shadow-modal);overflow:hidden}
+.broker-top{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:var(--navy);color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em}
+.broker-top .chip{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)}
+.broker-photo{position:relative;aspect-ratio:4/4.2;background:#e8edf3}
+.broker-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.broker-photo .nameplate{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.96);border-radius:var(--r-lg);padding:10px 16px;box-shadow:var(--shadow-hover)}
+.nameplate small{display:block;font-size:12px;font-weight:700;color:var(--amber);letter-spacing:.04em}
+.nameplate b{font-size:1.5rem;letter-spacing:-.015em;color:var(--navy)}
+.kv{padding:18px 20px 6px;margin:0}
+.kv div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--subtle);font-size:14px}
+.kv div:last-child{border-bottom:0}
+.kv dt{color:var(--muted);font-weight:600;margin:0}
+.kv dd{margin:0;color:var(--text);font-weight:700;text-align:right}
+.broker-cta{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 20px 20px}
+
+/* ===== Greeting ===== */
+.greet-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.quote-mark{width:48px;height:48px;border-radius:var(--r-lg);background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.greet h2{font-size:2rem;line-height:2.6rem}
+.greet .hello{font-weight:700;color:var(--navy);margin:24px 0 10px}
+.greet p{color:var(--text-2);margin:0 0 12px;font-size:1.0625rem;line-height:1.8}
+.sign{margin-top:24px;padding-top:18px;border-top:1px solid var(--border);display:flex;align-items:center;gap:14px}
+.sign img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.sign small{display:block;color:var(--muted);font-size:13px}
+.sign b{font-size:1.25rem;letter-spacing:.3em;color:var(--navy)}
+.principles{display:flex;flex-direction:column;gap:14px}
+.principle{display:flex;gap:16px;background:var(--canvas);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px}
+.principle .pi{width:44px;height:44px;border-radius:var(--r-lg);background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.principle h3{font-size:1.0625rem;margin-bottom:4px}
+.principle p{margin:0;font-size:14px;color:var(--text-2);line-height:1.65}
+
+/* ===== Listings ===== */
+.listings{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.lcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,border-color .2s}
+.lcard:hover{box-shadow:var(--shadow-hover);border-color:var(--border-strong)}
+.lthumb{aspect-ratio:16/10;position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font-size:14px;font-weight:600;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.lthumb.a{background:linear-gradient(135deg,#2C4A72,#0F294A)}
+.lthumb.b{background:linear-gradient(135deg,#1FA597,#0B6E66)}
+.lthumb.c{background:linear-gradient(135deg,#E59A3A,#A55A06)}
+.lthumb.d{background:linear-gradient(135deg,#64748B,#334155)}
+.lthumb .chips{position:absolute;top:12px;left:12px;display:flex;gap:6px}
+.lthumb .chips .chip{background:#fff}
+.lthumb .sample{position:absolute;top:12px;right:12px;background:rgba(15,23,42,.55);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:var(--r-sm)}
+.lbody{padding:20px;display:flex;flex-direction:column;flex:1}
+.lkind{font-size:13px;font-weight:700;color:var(--emerald)}
+.lprice{font-size:1.375rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin:2px 0 4px}
+.lloc{font-size:14px;color:var(--text-2);margin-bottom:12px}
+.lkv{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:13px;margin:0 0 14px}
+.lkv dt{color:var(--muted);margin:0}
+.lkv dd{margin:0 0 4px;color:var(--text);font-weight:600}
+.lfoot{margin-top:auto;padding-top:12px;border-top:1px solid var(--subtle);font-size:11.5px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);text-align:center;margin-top:20px}
+
+/* ===== Sectors ===== */
+.sectors{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sector{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;display:flex;flex-direction:column}
+.sector.wide{grid-column:span 2}
+.sector-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px}
+.sector .en{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.sector h3{margin:4px 0 6px}
+.sector .who{font-size:14px;color:var(--text-2);margin:0 0 16px}
+.checks{background:var(--canvas);border:1px solid var(--subtle);border-radius:var(--r-lg);padding:14px 16px;margin-top:auto}
+.checks .ct{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--verified);margin-bottom:8px}
+.checks ul{margin:0;padding:0;list-style:none}
+.checks li{position:relative;padding-left:14px;font-size:13.5px;color:var(--text-2);margin:4px 0;line-height:1.55}
+.checks li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--border-strong)}
+.checks-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:auto}
+.checks-2 .checks{margin-top:0}
+.sector-foot{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px solid var(--subtle)}
+.sector-foot b{color:var(--text-2);font-weight:600}
+
+/* ===== Tailored ===== */
+.tailor{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tcard{background:var(--canvas);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column}
+.tcard .ti{width:48px;height:48px;border-radius:var(--r-lg);background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.tcard .area{font-size:12px;font-weight:700;color:var(--amber);letter-spacing:.08em}
+.tcard h3{margin:4px 0 10px}
+.tcard>p{font-size:14.5px;color:var(--text-2);margin:0 0 16px}
+.vlist{list-style:none;margin:0 0 18px;padding:0}
+.vlist li{display:flex;gap:8px;font-size:14px;color:var(--text);margin:8px 0;line-height:1.55}
+.vlist .ico{color:var(--verified);margin-top:3px}
+.principle-box{margin-top:auto;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--r-sm);padding:12px 14px;font-size:13.5px;color:var(--text-2)}
+.principle-box b{display:block;color:var(--navy);font-size:12px;letter-spacing:.06em;margin-bottom:2px}
+
+/* ===== Promises ===== */
+.promises{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.promise{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px 20px;display:flex;flex-direction:column}
+.promise .no{font-size:2.25rem;font-weight:800;color:var(--amber);letter-spacing:-.03em;line-height:1}
+.promise h3{font-size:1.0625rem;margin:14px 0 8px}
+.promise p{font-size:13.5px;color:var(--text-2);margin:0 0 16px;line-height:1.65}
+.promise .chip{margin-top:auto;align-self:flex-start}
+
+/* ===== Process ===== */
+.steps{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;position:relative}
+.steps::before{content:"";position:absolute;top:22px;left:22px;right:7%;height:2px;background:var(--border)}
+.step{position:relative}
+.step .dot{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px;box-shadow:0 0 0 6px var(--canvas)}
+.step .dur{display:inline-block;font-size:12px;font-weight:700;color:var(--amber);margin-bottom:2px}
+.step h3{font-size:1.0625rem;margin-bottom:6px}
+.step p{font-size:13px;color:var(--text-2);margin:0 0 8px;line-height:1.6}
+.step .chip{font-size:11px}
+
+/* ===== Fee ===== */
+.fee-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;align-items:start}
+.tbl-wrap{background:var(--card);border:1px solid var(--border-strong);border-radius:var(--r-lg);overflow:hidden}
+.tbl-cap{padding:16px 20px;font-weight:700;color:var(--navy);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:var(--canvas);font-size:12px;font-weight:700;color:var(--text-2);letter-spacing:.04em;text-align:left;padding:10px 16px;border-bottom:1px solid var(--border)}
+td{padding:11px 16px;border-bottom:1px solid var(--subtle);color:var(--text)}
+tr:last-child td{border-bottom:0}
+td.etc{background:#FFFBEB;font-weight:600}
+.tbl-note{font-size:12.5px;color:var(--muted);padding:12px 20px;border-top:1px solid var(--border);background:var(--canvas)}
+.calc{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:24px;box-shadow:var(--shadow-hover)}
+.calc h3{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.calc .sub{font-size:13px;color:var(--muted);margin:0 0 8px}
+.field{margin-top:14px}
+.field>label{display:block;font-size:13px;font-weight:700;color:var(--text-2);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;height:46px;border:1px solid var(--border);border-radius:var(--r-md);padding:0 12px;font:500 15px var(--font);color:var(--text);background:#fff;transition:border-color .15s,box-shadow .15s}
+.field textarea{height:96px;padding:10px 12px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 2px rgba(15,41,74,.1)}
+.result{margin-top:18px;padding:16px;border-radius:var(--r-lg);background:var(--tint);color:var(--navy);font-weight:700;line-height:1.6}
+.result .big{font-size:1.5rem;letter-spacing:-.02em}
+.fine{font-size:12px;color:var(--muted);margin-top:10px}
+
+/* ===== Location ===== */
+.loc-media{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.media{margin:0;background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden}
+.media img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.media figcaption{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;padding:12px 16px;font-size:13.5px;color:var(--text-2);border-top:1px solid var(--border)}
+.media figcaption b{color:var(--navy)}
+.loc-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:28px}
+.panel-h{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.panel-h .pi{width:40px;height:40px;border-radius:var(--r-lg);background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center}
+.info-row{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--subtle)}
+.info-row .lab{flex:none;width:72px;font-size:13px;font-weight:700;color:var(--muted)}
+.info-row .val{font-size:14.5px;color:var(--text)}
+.info-row .val b{color:var(--navy)}
+.map-btns{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.legal{margin-top:18px;background:var(--canvas);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px 18px;font-size:13.5px}
+.legal .lt{display:flex;align-items:center;gap:6px;font-weight:700;color:var(--verified);margin-bottom:8px}
+.legal div{display:flex;justify-content:space-between;gap:12px;padding:4px 0;color:var(--text-2)}
+.legal div b{color:var(--text);text-align:right}
+.radios{display:flex;flex-wrap:wrap;gap:8px}
+.radios label{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:var(--r-md);padding:8px 12px;font-size:14px;font-weight:600;color:var(--text-2);cursor:pointer}
+.radios input{accent-color:var(--navy);width:auto;height:auto;margin:0}
+.radios label:has(input:checked){border-color:var(--navy);background:var(--tint);color:var(--navy)}
+.privacy{display:flex;gap:8px;font-size:12.5px;color:var(--text-2);background:var(--canvas);border-radius:var(--r-md);padding:12px;margin-top:16px}
+.privacy .ico{color:var(--verified);margin-top:2px}
+.agree{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;margin-top:14px;color:var(--text)}
+.agree input{width:18px;height:18px;accent-color:var(--navy);flex:none;margin-top:2px}
+.form-msg{display:none;margin-top:14px;padding:14px;border-radius:var(--r-lg);background:#FFFBEB;border:1px solid #FDE68A;color:#92400E;font-size:14px}
+
+/* ===== FAQ ===== */
+.faq{max-width:880px;margin:0 auto}
+details{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);margin-bottom:10px}
+summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:700;color:var(--navy);display:flex;gap:10px;align-items:flex-start}
+summary::-webkit-details-marker{display:none}
+summary .q{color:var(--amber);font-weight:800}
+summary::after{content:"+";margin-left:auto;color:var(--muted);font-weight:500;font-size:20px;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin:0;padding:0 20px 18px 44px;color:var(--text-2);font-size:15px}
+
+/* ===== Channels ===== */
+.channels{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.channel{background:var(--canvas);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px;text-decoration:none;transition:box-shadow .2s,border-color .2s}
+.channel:hover{box-shadow:var(--shadow-hover);border-color:var(--border-strong)}
+.channel .no{font-size:12px;font-weight:700;color:var(--amber)}
+.channel b{display:block;color:var(--navy);margin:4px 0 2px}
+.channel span:last-child{font-size:12.5px;color:var(--muted)}
+
+/* ===== Footer ===== */
+footer{background:var(--tint);padding:64px 0 32px}
+.ft-grid{display:grid;grid-template-columns:5fr 7fr;gap:40px}
+.ft-brand h3{display:flex;align-items:center;gap:8px;font-size:1.125rem}
+.ft-brand p{font-size:14px;color:var(--text-2);margin:10px 0 16px}
+.ft-pledge{background:var(--card);border-radius:var(--r-xl);padding:16px;font-size:13.5px;color:var(--text-2)}
+.ft-pledge b{display:flex;align-items:center;gap:6px;color:var(--navy);margin-bottom:4px;font-size:13px}
+.ft-legal{background:var(--card);border-radius:var(--r-xl);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;font-size:14px}
+.ft-legal small{display:block;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.04em;margin-bottom:2px}
+.ft-legal b{color:var(--navy)}
+.ft-legal p{margin:0;color:var(--text-2)}
+.copy{margin-top:32px;padding-top:20px;border-top:1px solid var(--border-strong);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+
+/* mobile quick bar */
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--border);grid-template-columns:1.3fr 1fr 1fr 1fr;box-shadow:0 -4px 16px rgba(15,41,74,.06)}
+.mbar a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 0 10px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none}
+.mbar a.call{background:var(--amber);color:#fff}
+
+/* ===== Responsive ===== */
+@media (max-width:1279px){ .gnb{display:none} }
+@media (max-width:1199px){
+  .container{padding:0 1.5rem}
+  .listings{grid-template-columns:repeat(2,1fr)}
+  .sectors{grid-template-columns:repeat(2,1fr)}
+  .promises{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr);row-gap:28px}
+  .steps::before{display:none}
+  .channels{grid-template-columns:repeat(3,1fr)}
+  .fee-grid,.loc-grid{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .hero-grid,.greet-grid{grid-template-columns:1fr}
+  .broker{max-width:440px;margin:0 auto;width:100%}
+  .tailor{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr}
+}
+@media (max-width:767px){
+  .container{padding:0 1rem}
+  .section{padding:64px 0}
+  .sec-head{margin-bottom:36px}
+  h2{font-size:1.625rem;line-height:2.125rem}
+  .greet h2{font-size:1.5rem;line-height:2rem}
+  .greet h2 br{display:none}
+  .hd{height:64px}
+  html{scroll-padding-top:72px}
+  .tel-pill span,.hd-right .btn{display:none}
+  .tel-pill{padding:10px}
+  .hero{padding:96px 0 56px}
+  .hero h1{font-size:2rem;line-height:2.625rem;letter-spacing:-.02em}
+  .hero h1 br{display:none}
+  .hero .desc{font-size:1rem;line-height:1.75rem}
+  .feats{grid-template-columns:1fr;gap:8px}
+  .feat{display:flex;align-items:center;gap:12px;padding:12px 14px}
+  .feat .fi{margin:0}
+  .cta-row .btn{flex:1}
+  .listings,.sectors,.promises,.loc-media{grid-template-columns:1fr}
+  .sector.wide{grid-column:auto}
+  .checks-2{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .channels{grid-template-columns:1fr 1fr}
+  .ft-legal{grid-template-columns:1fr}
+  .info-row{flex-direction:column;gap:2px}
+  .panel{padding:20px}
+  th,td{padding:9px 10px}
+  table{font-size:13px}
+  .mbar{display:grid}
+  footer{padding-bottom:96px}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M2 21h20M8 7h4M8 11h4M8 15h4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h2M14 14h2M8 18h2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M7 7h4v4c0 3-2 5-4 6M15 7h4v4c0 3-2 5-4 6"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 2h14v20l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 7h6M9 11h6M9 15h4"/></symbol>
+  <symbol id="i-family" viewBox="0 0 24 24"><circle cx="8" cy="6" r="2.5"/><circle cx="16" cy="6" r="2.5"/><path d="M4 21v-6a4 4 0 0 1 8 0v6M12 21v-5a4 4 0 0 1 8 0v5"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M3 9v11h18V9M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0M9 20v-6h6v6"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 18h8"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+</svg>
+
+<header>
+  <div class="container hd">
+    <a class="brand" href="#top" aria-label="춘의역탑부동산 처음으로">
+      <span class="brand-mark"><svg class="ico"><use href="#i-building"/></svg></span>
+      <span><b>춘의역탑부동산</b><small>공인중개사사무소</small></span>
+    </a>
+    <nav class="gnb" aria-label="주요 메뉴">
+      <a href="#broker">대표 소개</a><a href="#listings">추천 매물</a><a href="#sectors">중개 분야</a>
+      <a href="#promises">안심 약속</a><a href="#fee">중개보수</a><a href="#location">오시는 길</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="hd-right">
+      <a class="tel-pill num" href="tel:0326835949" aria-label="전화 032-683-5949"><svg class="ico sm"><use href="#i-phone"/></svg><span>032-683-5949</span></a>
+      <a class="btn btn-accent btn-sm" href="#booking"><svg class="ico sm"><use href="#i-cal"/></svg>방문·전화 상담 예약</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO + 대표 소개 ===== -->
+<section class="hero" id="broker">
+  <div class="container hero-grid">
+    <div>
+      <div class="pledge"><svg class="ico sm"><use href="#i-shield"/></svg>실제 거래 가능한 매물만 광고합니다</div>
+      <div class="kicker">부천 춘의역 6번 출구 도보 1분</div>
+      <h1>상담부터 잔금까지,<br><em>대표 공인중개사</em>가 직접 함께합니다</h1>
+      <p class="desc">춘의동 아파트, 단독주택, 상가주택, 상가, 지식산업센터의 매매·전세·월세를 중개합니다. 담당자가 바뀌지 않는 1:1 전담 중개로 계약 전 과정을 서면 설명과 함께 진행합니다.</p>
+      <div class="feats">
+        <div class="feat"><div class="fi"><svg class="ico"><use href="#i-user"/></svg></div><div><b>대표 1인 전담</b><span>상담·안내·계약·잔금 직접</span></div></div>
+        <div class="feat"><div class="fi"><svg class="ico"><use href="#i-doc"/></svg></div><div><b>계약 전 서면 설명</b><span>확인·설명서 사전 열람</span></div></div>
+        <div class="feat"><div class="fi"><svg class="ico"><use href="#i-receipt"/></svg></div><div><b>법정 상한 이내</b><span>중개보수 사전 서면 안내</span></div></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#booking"><svg class="ico sm"><use href="#i-cal"/></svg>방문 상담 예약하기</a>
+        <a class="btn btn-secondary" href="#listings"><svg class="ico sm"><use href="#i-building"/></svg>추천 매물 보기</a>
+      </div>
+      <div class="spec">
+        <span class="lbl">중개 분야</span>
+        <span class="chip tag">아파트</span><span class="chip tag">단독주택</span><span class="chip tag">상가주택</span><span class="chip tag">상가</span><span class="chip tag">지식산업센터</span>
+      </div>
+    </div>
+
+    <aside class="broker" aria-label="대표 공인중개사 정보">
+      <div class="broker-top"><span>공인중개사 등록 중개사무소</span><span class="chip">2023년 개업</span></div>
+      <div class="broker-photo">
+        <picture>
+          <source media="(max-width:767px)" srcset="assets/ceo-400x500.jpg">
+          <img src="assets/ceo-800x1000.jpg" alt="춘의역탑부동산 대표 공인중개사 김영월" width="800" height="1000">
+        </picture>
+        <div class="nameplate"><small>대표 공인중개사</small><b>김영월</b></div>
+      </div>
+      <dl class="kv">
+        <div><dt>중개업력</dt><dd>[입력: N]년</dd></div>
+        <div><dt>진행 방식</dt><dd>대표 1인 전담</dd></div>
+        <div><dt>등록번호</dt><dd class="num">41190-2023-00214</dd></div>
+        <div><dt>사무실 위치</dt><dd>춘의역 6번 출구 도보 1분</dd></div>
+      </dl>
+      <div class="broker-cta">
+        <a class="btn btn-accent btn-sm" href="tel:0326835949"><svg class="ico sm"><use href="#i-phone"/></svg>전화 문의</a>
+        <a class="btn btn-secondary btn-sm" href="#location"><svg class="ico sm"><use href="#i-pin"/></svg>위치 안내</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== 인사말 + 원칙 ===== -->
+<section class="section alt" id="greeting">
+  <div class="container greet-grid">
+    <div class="greet">
+      <div class="quote-mark"><svg class="ico"><use href="#i-quote"/></svg></div>
+      <span class="overline">대표 공인중개사 인사말</span>
+      <h2>"처음 나눈 상담 내용이<br>잔금일까지 그대로 이어집니다."</h2>
+      <p class="hello">안녕하세요, 춘의역탑부동산 대표 공인중개사 김영월입니다.</p>
+      <p>저희 사무소는 대표인 제가 직접 상담하고, 직접 현장을 안내하고, 직접 계약서를 작성합니다. 담당자가 중간에 바뀌지 않기 때문에 처음 나눈 상담 내용이 잔금일까지 그대로 이어집니다.</p>
+      <p>매물의 좋은 점과 함께 확인이 필요한 점도 계약 전에 서면으로 설명드리겠습니다.</p>
+      <ul class="vlist" style="margin-top:18px">
+        <li><svg class="ico sm"><use href="#i-tick"/></svg>[입력: 대표 이력 1 — 예) 20XX년 공인중개사 자격 취득]</li>
+        <li><svg class="ico sm"><use href="#i-tick"/></svg>[입력: 대표 이력 2 — 예) 이전 근무처·기간]</li>
+        <li><svg class="ico sm"><use href="#i-tick"/></svg>2023년 춘의역탑부동산공인중개사사무소 개업</li>
+      </ul>
+      <div class="sign">
+        <img src="assets/ceo-avatar-300.jpg" alt="" width="56" height="56">
+        <div><small>춘의역탑부동산공인중개사사무소 대표 공인중개사</small><b>김영월</b></div>
+      </div>
+    </div>
+    <div class="principles">
+      <div class="principle"><div class="pi"><svg class="ico"><use href="#i-user"/></svg></div><div><h3>대표 직접 동행·작성</h3><p>현장 안내부터 확인·설명서 작성, 잔금일 등기 확인까지 대표 공인중개사가 직접 진행합니다.</p></div></div>
+      <div class="principle"><div class="pi"><svg class="ico"><use href="#i-doc"/></svg></div><div><h3>확인할 점까지 서면 고지</h3><p>위반건축물 여부, 도로 접면, 노후 설비, 선순위 채권 금액을 계약 전에 서면으로 안내합니다.</p></div></div>
+      <div class="principle"><div class="pi"><svg class="ico"><use href="#i-receipt"/></svg></div><div><h3>법정 상한 요율 준수</h3><p>계약 전 중개보수 금액을 서면으로 알려드리며, 법정 상한을 넘겨 받지 않습니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 추천 매물 ===== -->
+<section class="section" id="listings">
+  <div class="container">
+    <div class="sec-head">
+      <span class="overline">Recommended Listings</span>
+      <h2>이번 주 추천 매물</h2>
+      <p>모든 매물은 등기사항증명서로 소유자와 권리관계를 확인한 뒤 광고합니다.</p>
+    </div>
+    <div class="listings">
+      <article class="lcard">
+        <div class="lthumb a"><div class="chips"><span class="chip sale">매매</span></div><span class="sample">샘플</span>아파트 사진</div>
+        <div class="lbody">
+          <div class="lkind">아파트 · CT-0001</div>
+          <div class="lprice num">[매매가]</div>
+          <div class="lloc">부천시 원미구 춘의동 [단지명]</div>
+          <dl class="lkv num"><div><dt>전용면적</dt><dd>[00]㎡ ([00]평)</dd></div><div><dt>층</dt><dd>[00]층 / [00]층</dd></div><div><dt>방향</dt><dd>남향</dd></div><div><dt>입주</dt><dd>협의</dd></div></dl>
+          <div class="lfoot">춘의역탑부동산 · 등록번호 41190-2023-00214 · ☎ 032-683-5949</div>
+        </div>
+      </article>
+      <article class="lcard">
+        <div class="lthumb b"><div class="chips"><span class="chip sale">매매</span></div><span class="sample">샘플</span>상가주택 사진</div>
+        <div class="lbody">
+          <div class="lkind">상가주택 · CT-0002</div>
+          <div class="lprice num">[매매가]</div>
+          <div class="lloc">부천시 원미구 [동]</div>
+          <dl class="lkv num"><div><dt>대지면적</dt><dd>[00]㎡</dd></div><div><dt>규모</dt><dd>지상 [0]층</dd></div><div><dt>임대현황</dt><dd>보증 [0] / 월 [0]</dd></div><div><dt>사용승인</dt><dd>[0000.00]</dd></div></dl>
+          <div class="lfoot">춘의역탑부동산 · 등록번호 41190-2023-00214 · ☎ 032-683-5949</div>
+        </div>
+      </article>
+      <article class="lcard">
+        <div class="lthumb c"><div class="chips"><span class="chip monthly">월세</span></div><span class="sample">샘플</span>상가 사진</div>
+        <div class="lbody">
+          <div class="lkind">상가 · CT-0003</div>
+          <div class="lprice num">보증 [0,000] / 월 [000]</div>
+          <div class="lloc">춘의역 인근 1층</div>
+          <dl class="lkv num"><div><dt>전용면적</dt><dd>[00]㎡</dd></div><div><dt>용도</dt><dd>[1·2종 근생]</dd></div><div><dt>관리비</dt><dd>월 [00]만원</dd></div><div><dt>권리금</dt><dd>협의</dd></div></dl>
+          <div class="lfoot">춘의역탑부동산 · 등록번호 41190-2023-00214 · ☎ 032-683-5949</div>
+        </div>
+      </article>
+      <article class="lcard">
+        <div class="lthumb d"><div class="chips"><span class="chip sale">매매</span><span class="chip jeonse">임대</span></div><span class="sample">샘플</span>지식산업센터 사진</div>
+        <div class="lbody">
+          <div class="lkind">지식산업센터 · CT-0004</div>
+          <div class="lprice num">[매매가]</div>
+          <div class="lloc">부천시 원미구 [동]</div>
+          <dl class="lkv num"><div><dt>전용면적</dt><dd>[00]㎡</dd></div><div><dt>층고</dt><dd>[0.0]m</dd></div><div><dt>하중</dt><dd>[0.0]t/㎡</dd></div><div><dt>승강기</dt><dd>화물용</dd></div></dl>
+          <div class="lfoot">춘의역탑부동산 · 등록번호 41190-2023-00214 · ☎ 032-683-5949</div>
+        </div>
+      </article>
+    </div>
+    <p class="note">※ 위 4건은 화면 구성용 샘플입니다. 실제 매물 정보와 사진으로 교체한 뒤 게시하세요.</p>
+  </div>
+</section>
+
+<!-- ===== 중개 분야 ===== -->
+<section class="section alt" id="sectors">
+  <div class="container">
+    <div class="sec-head">
+      <span class="overline">Property Sectors &amp; Verification</span>
+      <h2>5대 중개 분야와 계약 전 확인 항목</h2>
+      <p>분야마다 확인해야 할 서류와 현장 항목이 다릅니다. 계약 전에 아래 항목을 직접 확인하고 설명드립니다.</p>
+    </div>
+    <div class="sectors">
+      <div class="sector">
+        <div class="sector-top"><span class="en">APARTMENT</span><span class="chip sale">매매 · 전세 · 월세</span></div>
+        <h3>아파트</h3><p class="who">실거주 가구, 신혼부부, 갈아타기 수요</p>
+        <div class="checks"><div class="ct"><svg class="ico sm"><use href="#i-check"/></svg>계약 전 확인 항목</div><ul>
+          <li>등기사항증명서 (소유자, 근저당, 가압류)</li><li>관리비 부과 내역, 선수관리비 정산</li><li>학교 배정, 7호선 도보 동선</li><li>국토교통부 실거래가 비교</li></ul></div>
+        <div class="sector-foot"><span>주요 고객 <b>실거주·신혼부부</b></span></div>
+      </div>
+      <div class="sector">
+        <div class="sector-top"><span class="en">HOUSE</span><span class="chip sale">매매 · 전세 · 월세</span></div>
+        <h3>단독주택</h3><p class="who">실거주 가구, 리모델링·신축 검토 고객</p>
+        <div class="checks"><div class="ct"><svg class="ico sm"><use href="#i-check"/></svg>계약 전 확인 항목</div><ul>
+          <li>건축물대장 (위반건축물 등재 여부)</li><li>토지이용계획확인서 (용도지역, 건폐율·용적률)</li><li>도로 접면 길이·폭, 맹지 여부</li><li>배관·누수·난방 등 노후 설비</li></ul></div>
+        <div class="sector-foot"><span>주요 고객 <b>실거주·신축 검토</b></span></div>
+      </div>
+      <div class="sector">
+        <div class="sector-top"><span class="en">MIXED-USE</span><span class="chip sale">매매 · 전세 · 월세</span></div>
+        <h3>상가주택</h3><p class="who">거주와 임대수익을 함께 원하는 고객</p>
+        <div class="checks"><div class="ct"><svg class="ico sm"><use href="#i-check"/></svg>계약 전 확인 항목</div><ul>
+          <li>주택·상가 면적 비율 (중개보수·세금 기준)</li><li>호실별 임대현황 (보증금·월세·만기)</li><li>용도변경 이력, 불법 전용 여부</li><li>선순위 임차보증금 합계</li></ul></div>
+        <div class="sector-foot"><span>주요 고객 <b>주거+임대소득 희망자</b></span></div>
+      </div>
+      <div class="sector">
+        <div class="sector-top"><span class="en">RETAIL</span><span class="chip monthly">매매 · 임대</span></div>
+        <h3>상가</h3><p class="who">창업자, 자영업자, 수익형 상가 매수자</p>
+        <div class="checks"><div class="ct"><svg class="ico sm"><use href="#i-check"/></svg>계약 전 확인 항목</div><ul>
+          <li>건물 용도 (제1종·제2종 근린생활시설)</li><li>업종별 영업 신고·허가 가능 여부</li><li>권리금 계약과 임대차 계약 분리</li><li>상가임대차보호법 환산보증금·갱신요구권</li></ul></div>
+        <div class="sector-foot"><span>주요 고객 <b>창업자·자영업자</b></span></div>
+      </div>
+      <div class="sector wide">
+        <div class="sector-top"><span class="en">KNOWLEDGE INDUSTRY CENTER</span><span class="chip monthly">매매 · 임대</span></div>
+        <h3>지식산업센터</h3><p class="who">제조·IT·지식서비스 사업자, 임대 목적 투자자</p>
+        <div class="checks-2">
+          <div class="checks"><div class="ct"><svg class="ico sm"><use href="#i-check"/></svg>입주 요건·세무</div><ul>
+            <li>산업집적법상 입주 가능 업종 확인</li><li>입주 계약·신고 절차 (관리기관 또는 시청)</li><li>취득세·재산세 감면 요건과 유지 의무 (세무사 확인)</li></ul></div>
+          <div class="checks"><div class="ct"><svg class="ico sm"><use href="#i-check"/></svg>설비·동선 실사</div><ul>
+            <li>층고, 바닥 하중(t/㎡)</li><li>드라이브인·도어투도어 여부</li><li>화물용 승강기, 하역장 진입 차량</li><li>전용률, 관리비</li></ul></div>
+        </div>
+        <div class="sector-foot"><span>주요 고객 <b>사업자·투자자</b></span><span>현장 동행 실사</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 고객 유형별 ===== -->
+<section class="section" id="tailored">
+  <div class="container">
+    <div class="sec-head">
+      <span class="overline">Tailored Solutions</span>
+      <h2>고객 유형별 맞춤 서비스</h2>
+      <p>실거주자, 사업자, 투자자마다 먼저 확인할 것이 다릅니다.</p>
+    </div>
+    <div class="tailor">
+      <div class="tcard">
+        <div class="ti"><svg class="ico"><use href="#i-family"/></svg></div>
+        <span class="area">맞춤 영역 01</span><h3>일반 고객 (실거주)</h3>
+        <p>예산, 대출 규모, 출퇴근 동선, 학교 배정, 입주 시기를 듣고 후보 매물 비교표를 1~3일 안에 정리해 드립니다.</p>
+        <ul class="vlist">
+          <li><svg class="ico sm"><use href="#i-check"/></svg>선순위 채권 + 보증금 합계를 시세와 비교</li>
+          <li><svg class="ico sm"><use href="#i-check"/></svg>전세보증금 반환보증 가입 가능 여부 사전 확인 안내</li>
+          <li><svg class="ico sm"><use href="#i-check"/></svg>전입신고·확정일자·임대차 신고(30일 이내) 일정 안내</li>
+        </ul>
+        <div class="principle-box"><b>제공 원칙</b>보증금 보호를 계약의 최우선으로 둡니다.</div>
+      </div>
+      <div class="tcard">
+        <div class="ti"><svg class="ico"><use href="#i-store"/></svg></div>
+        <span class="area">맞춤 영역 02</span><h3>사업자 고객 (상가·지식산업센터)</h3>
+        <p>업종이 건물 용도에서 영업 가능한지, 입주 요건과 시설 조건이 맞는지 계약 전에 확인합니다.</p>
+        <ul class="vlist">
+          <li><svg class="ico sm"><use href="#i-check"/></svg>입주 가능 업종·시설 기준 계약 전 대조</li>
+          <li><svg class="ico sm"><use href="#i-check"/></svg>지식산업센터 하중·화물 동선 현장 동행</li>
+          <li><svg class="ico sm"><use href="#i-check"/></svg>권리금 계약과 임대차 계약 분리 진행</li>
+        </ul>
+        <div class="principle-box"><b>제공 원칙</b>영업 개시 후 인허가 문제가 생기지 않도록 서류를 먼저 확인합니다.</div>
+      </div>
+      <div class="tcard">
+        <div class="ti"><svg class="ico"><use href="#i-chart"/></svg></div>
+        <span class="area">맞춤 영역 03</span><h3>부동산 투자자 (수익형)</h3>
+        <p>상가주택·상가·지식산업센터의 실제 임대현황과 실거래가를 표로 정리해 드립니다.</p>
+        <ul class="vlist">
+          <li><svg class="ico sm"><use href="#i-check"/></svg>수익률은 '제공 시점 임대 조건 기준 계산값'만 제시</li>
+          <li><svg class="ico sm"><use href="#i-check"/></svg>수익 보장·시세 상승 표현 사용하지 않음</li>
+          <li><svg class="ico sm"><use href="#i-check"/></svg>취득세·양도세는 세무사 상담 권유</li>
+        </ul>
+        <div class="principle-box"><b>제공 원칙</b>사무소는 세무 판단을 하지 않으며 확인된 수치만 제시합니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5가지 약속 ===== -->
+<section class="section alt" id="promises">
+  <div class="container">
+    <div class="sec-head">
+      <span class="overline">Our Five Promises</span>
+      <h2>춘의역탑부동산의 5가지 약속</h2>
+      <p>모든 거래에서 지키는 운영 원칙입니다.</p>
+    </div>
+    <div class="promises">
+      <div class="promise"><span class="no">01</span><h3>대표 직접 진행</h3><p>첫 상담, 현장 안내, 확인·설명서와 계약서 작성, 잔금까지 대표 공인중개사 1명이 담당합니다.</p><span class="chip ok"><svg class="ico sm"><use href="#i-tick"/></svg>담당자 교체 없음</span></div>
+      <div class="promise"><span class="no">02</span><h3>서면 설명</h3><p>중개대상물 확인·설명서를 계약 전에 미리 보여드리고, 서명 후 사본을 바로 드립니다.</p><span class="chip ok"><svg class="ico sm"><use href="#i-tick"/></svg>사전 열람</span></div>
+      <div class="promise"><span class="no">03</span><h3>공부서류 당일 재확인</h3><p>계약 당일과 잔금 직전에 등기사항증명서를 다시 발급해 소유권·근저당 변동을 확인합니다.</p><span class="chip ok"><svg class="ico sm"><use href="#i-tick"/></svg>당일 재발급</span></div>
+      <div class="promise"><span class="no">04</span><h3>법정 상한 이내 중개보수</h3><p>계약 전 중개보수 금액을 서면으로 안내하고, 법정 상한을 넘는 금액은 받지 않습니다.</p><span class="chip ok"><svg class="ico sm"><use href="#i-tick"/></svg>사전 서면 안내</span></div>
+      <div class="promise"><span class="no">05</span><h3>정직한 매물 광고</h3><p>실제 거래 가능한 매물만 광고하고, 계약된 매물은 당일 내리거나 "거래완료"로 표시합니다.</p><span class="chip ok"><svg class="ico sm"><use href="#i-tick"/></svg>당일 정리</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7단계 절차 ===== -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="sec-head">
+      <span class="overline">Standard Procedure</span>
+      <h2>7단계 중개 진행 절차</h2>
+      <p>첫 문의부터 입주 후 안내까지 단계별 일정과 확인 절차에 따라 진행합니다.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="dot">1</div><span class="dur">당일</span><h3>상담</h3><p>전화·방문·카카오톡으로 예산, 지역, 입주 조건 확인</p><span class="chip tag">상담 내용 비밀 유지</span></div>
+      <div class="step"><div class="dot">2</div><span class="dur">1~3일</span><h3>매물 제안</h3><p>조건에 맞는 매물 목록과 기초 자료 전달</p><span class="chip tag">실매물 확인</span></div>
+      <div class="step"><div class="dot">3</div><span class="dur">30분~1시간</span><h3>현장 안내</h3><p>예약 시간에 대표가 직접 동행</p><span class="chip tag">설비·채광 확인</span></div>
+      <div class="step"><div class="dot">4</div><span class="dur">계약 전 1~2일</span><h3>권리·서류 확인</h3><p>등기·건축물대장·토지이용계획 확인, 확인설명서 초안</p><span class="chip tag">위험 요소 설명</span></div>
+      <div class="step"><div class="dot">5</div><span class="dur">1~2시간</span><h3>계약 체결</h3><p>신분 확인, 특약 조율, 공제증서 교부, 소유자 계좌로 계약금 송금</p><span class="chip tag">공제증서 사본 교부</span></div>
+      <div class="step"><div class="dot">6</div><span class="dur">보통 1~3개월</span><h3>중도금·잔금</h3><p>잔금 당일 등기 재확인, 관리비·공과금 정산, 열쇠 인계</p><span class="chip tag">당일 소유권 재확인</span></div>
+      <div class="step"><div class="dot">7</div><span class="dur">잔금 후</span><h3>사후 안내</h3><p>거래신고, 전입신고·확정일자 확인, 만기 알림</p><span class="chip tag">만기 3개월 전 안내</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 중개보수 ===== -->
+<section class="section alt" id="fee">
+  <div class="container">
+    <div class="sec-head">
+      <span class="overline">Brokerage Fee</span>
+      <h2>중개보수 안내</h2>
+      <p>중개보수는 계약이 성사된 경우에만, 경기도 조례의 법정 상한 이내에서 받습니다.</p>
+    </div>
+    <div class="fee-grid">
+      <div class="tbl-wrap">
+        <div class="tbl-cap">주택 중개보수 상한 요율 <span class="chip tag">경기도 기준 · 2026.11</span></div>
+        <table class="num">
+          <thead><tr><th>거래금액</th><th>매매·교환</th><th>임대차</th></tr></thead>
+          <tbody>
+            <tr><td>5천만원 미만</td><td>0.6% (한도 25만원)</td><td>0.5% (한도 20만원)</td></tr>
+            <tr><td>5천만~1억원 미만</td><td>0.5% (한도 80만원)</td><td>0.4% (한도 30만원)</td></tr>
+            <tr><td>1억~2억원 미만</td><td>0.5% (한도 80만원)</td><td>0.3%</td></tr>
+            <tr><td>2억~6억원 미만</td><td>0.4%</td><td>0.3%</td></tr>
+            <tr><td>6억~9억원 미만</td><td>0.4%</td><td>0.4%</td></tr>
+            <tr><td>9억~12억원 미만</td><td>0.5%</td><td>0.4%</td></tr>
+            <tr><td>12억~15억원 미만</td><td>0.6%</td><td>0.5%</td></tr>
+            <tr><td>15억원 이상</td><td>0.7%</td><td>0.6%</td></tr>
+            <tr><td class="etc">상가·지식산업센터 등</td><td class="etc" colspan="2">거래금액의 0.9% 이내 협의</td></tr>
+          </tbody>
+        </table>
+        <div class="tbl-note">월세 거래금액 = 보증금 + 월세×100 (5천만원 미만이면 보증금 + 월세×70) · 상가주택은 주택 면적 1/2 이상이면 주택 요율 · 일반과세자는 부가세 10% 별도 · 지급 시기: 잔금일</div>
+      </div>
+      <div class="calc" aria-label="중개보수 계산기">
+        <h3><svg class="ico"><use href="#i-calc"/></svg>중개보수 상한 계산기</h3>
+        <p class="sub">한 당사자 기준 법정 상한액입니다.</p>
+        <div class="field"><label for="ctype">부동산 종류</label>
+          <select id="ctype"><option value="house">주택 (아파트·단독·주택면적 1/2 이상 상가주택)</option><option value="etc">주택 외 (상가·지식산업센터 등)</option></select></div>
+        <div class="field"><label for="deal">거래 유형</label>
+          <select id="deal"><option value="sale">매매</option><option value="jeonse">전세</option><option value="monthly">월세</option></select></div>
+        <div class="field"><label for="amt">매매가 또는 보증금 (만원)</label>
+          <input id="amt" class="num" type="number" inputmode="numeric" min="0" placeholder="예: 50000 (= 5억원)"></div>
+        <div class="field" id="rentF"><label for="rent">월세 (만원)</label>
+          <input id="rent" class="num" type="number" inputmode="numeric" min="0" placeholder="예: 60"></div>
+        <div class="result num" id="out">금액을 입력하세요.</div>
+        <div class="fine">실제 금액은 상한 이내에서 협의하며, 계약 전 서면으로 안내합니다. 부가세 별도.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 오시는 길 + 상담 예약 ===== -->
+<section class="section" id="location">
+  <div class="container">
+    <div class="sec-head">
+      <span class="overline">Location &amp; Consultation</span>
+      <h2>오시는 길 및 1:1 상담 예약</h2>
+      <p>방문 상담은 예약 후 오시면 기다리지 않고 대표 공인중개사와 바로 상담하실 수 있습니다.</p>
+    </div>
+
+    <div class="loc-media">
+      <figure class="media">
+        <img src="assets/office-placeholder.svg" alt="춘의역탑부동산 사무실 사진">
+        <figcaption><b>사무실 외관·내부</b><span>사진 교체 예정</span></figcaption>
+      </figure>
+      <figure class="media">
+        <img src="assets/map.svg" alt="춘의역 6번 출구에서 춘의역탑부동산까지 도보 1분 약도">
+        <figcaption><b>찾아오시는 길</b><span>개략 약도 · 정확한 경로는 지도 앱 확인</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="loc-grid">
+      <div class="panel">
+        <div class="panel-h"><div class="pi"><svg class="ico"><use href="#i-pin"/></svg></div><h3>사무소 위치 안내</h3><span class="chip ok" style="margin-left:auto">6번 출구 도보 1분</span></div>
+        <div class="info-row"><span class="lab">주소</span><span class="val"><b>경기도 부천시 원미구 춘의동 123-56 1층</b><br>춘의역탑부동산공인중개사사무소
+          <span class="map-btns">
+            <a class="btn btn-secondary btn-sm" target="_blank" rel="noopener" href="https://map.naver.com/p/search/%EB%B6%80%EC%B2%9C%EC%8B%9C%20%EC%9B%90%EB%AF%B8%EA%B5%AC%20%EC%B6%98%EC%9D%98%EB%8F%99%20123-56">네이버 지도</a>
+            <a class="btn btn-secondary btn-sm" target="_blank" rel="noopener" href="https://map.kakao.com/?q=%EB%B6%80%EC%B2%9C%EC%8B%9C%20%EC%9B%90%EB%AF%B8%EA%B5%AC%20%EC%B6%98%EC%9D%98%EB%8F%99%20123-56">카카오맵</a>
+          </span></span></div>
+        <div class="info-row"><span class="lab">지하철</span><span class="val">서울지하철 7호선 <b>춘의역 6번 출구</b>에서 도보 약 1분</span></div>
+        <div class="info-row"><span class="lab">차량·주차</span><span class="val">내비게이션 "부천시 원미구 춘의동 123-56" 검색<br>[입력: 주차 가능 여부·위치]</span></div>
+        <div class="info-row"><span class="lab">운영시간</span><span class="val">[입력: 영업시간]<br>[입력: 휴무일] (예약 시 상담 가능)</span></div>
+        <div class="info-row"><span class="lab">전화</span><span class="val"><a class="num" href="tel:0326835949" style="font-weight:800;color:var(--navy);text-decoration:none;font-size:1.125rem">032-683-5949</a></span></div>
+        <div class="legal">
+          <div class="lt"><svg class="ico sm"><use href="#i-shield"/></svg>중개사무소 등록 및 보증 정보</div>
+          <div><span>등록번호</span><b class="num">41190-2023-00214</b></div>
+          <div><span>대표 공인중개사</span><b>김영월</b></div>
+          <div><span>손해배상책임 보장</span><b>[입력: 공제/보증보험·금액]</b></div>
+        </div>
+      </div>
+
+      <form class="panel" id="booking" novalidate>
+        <div class="panel-h"><div class="pi"><svg class="ico"><use href="#i-cal"/></svg></div><h3>1:1 상담 예약 및 매물 접수</h3></div>
+        <p style="margin:0;font-size:14px;color:var(--text-2)">접수된 정보는 대표 공인중개사 1인에게만 전달되며, 상담 목적 외에는 사용하지 않습니다.</p>
+        <div class="field"><label for="fname">성함 *</label><input id="fname" required placeholder="홍길동"></div>
+        <div class="field"><label for="fphone">연락처 *</label><input id="fphone" type="tel" required placeholder="010-0000-0000"></div>
+        <div class="field"><label>관심 매물 *</label>
+          <div class="radios">
+            <label><input type="radio" name="kind" value="아파트" checked>아파트</label>
+            <label><input type="radio" name="kind" value="단독주택">단독주택</label>
+            <label><input type="radio" name="kind" value="상가주택">상가주택</label>
+            <label><input type="radio" name="kind" value="상가">상가</label>
+            <label><input type="radio" name="kind" value="지식산업센터">지식산업센터</label>
+          </div></div>
+        <div class="field"><label>거래 유형 · 상담 방식</label>
+          <div class="radios">
+            <label><input type="radio" name="deal" value="매매" checked>매매</label>
+            <label><input type="radio" name="deal" value="전세">전세</label>
+            <label><input type="radio" name="deal" value="월세">월세</label>
+            <label><input type="radio" name="deal" value="매물 접수">매물 접수(내놓기)</label>
+          </div>
+          <div class="radios" style="margin-top:8px">
+            <label><input type="radio" name="how" value="방문 상담" checked>사무소 방문 상담</label>
+            <label><input type="radio" name="how" value="전화 상담">전화 상담</label>
+          </div></div>
+        <div class="field"><label for="fmsg">문의 내용 및 희망 일시</label><textarea id="fmsg" placeholder="예) 춘의동 30평대 아파트 매매, 토요일 오전 방문 희망"></textarea></div>
+        <label class="agree"><input type="checkbox" id="fagree">개인정보 수집·이용(이름, 연락처, 문의내용 / 상담 목적 / 상담 종료 후 1년 보관)에 동의합니다.</label>
+        <div class="privacy"><svg class="ico sm"><use href="#i-lock"/></svg><span>공인중개사법 제29조에 따라 개업공인중개사는 업무상 알게 된 의뢰인의 비밀을 누설하지 않습니다.</span></div>
+        <button class="btn btn-primary" type="submit" style="width:100%;margin-top:16px"><svg class="ico sm"><use href="#i-send"/></svg>대표 공인중개사에게 상담 접수하기</button>
+        <div class="form-msg" id="fmsgbox" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section alt" id="faq">
+  <div class="container">
+    <div class="sec-head">
+      <span class="overline">FAQ</span>
+      <h2>자주 묻는 질문</h2>
+      <p>더 궁금한 점은 032-683-5949로 전화 주세요.</p>
+    </div>
+    <div class="faq">
+      <details><summary><span class="q">Q</span>상담 비용이 있나요?</summary><p>없습니다. 상담과 현장 안내는 무료이며, 계약이 성사된 경우에만 법정 상한 이내의 중개보수가 발생합니다.</p></details>
+      <details><summary><span class="q">Q</span>중개보수는 언제 내나요?</summary><p>잔금일(거래대금 지급이 끝나는 날)에 전액 내시면 됩니다.</p></details>
+      <details><summary><span class="q">Q</span>상담은 누가 하나요?</summary><p>대표 공인중개사 김영월이 첫 상담부터 현장 안내, 계약, 잔금까지 직접 진행합니다.</p></details>
+      <details><summary><span class="q">Q</span>전세 계약 전에 꼭 확인할 것은 무엇인가요?</summary><p>등기사항증명서의 소유자, 근저당 등 선순위 채권, 압류 여부를 확인하고, 선순위 채권과 보증금 합계를 시세와 비교합니다. 임대인의 세금 체납 여부도 확인합니다.</p></details>
+      <details><summary><span class="q">Q</span>계약금은 누구 계좌로 보내나요?</summary><p>반드시 등기상 소유자 명의 계좌로 보내세요. 사무소는 계약금·잔금을 사무소 계좌로 받지 않습니다.</p></details>
+      <details><summary><span class="q">Q</span>상가주택은 어떤 중개보수 요율을 적용하나요?</summary><p>주택 면적이 1/2 이상이면 주택 요율, 1/2 미만이면 주택 외 요율(0.9% 이내)을 적용합니다.</p></details>
+      <details><summary><span class="q">Q</span>지식산업센터는 아무나 살 수 있나요?</summary><p>입주 가능 업종의 사업자여야 직접 사용할 수 있으며, 관리기관 또는 시청에 입주 계약·신고가 필요합니다.</p></details>
+      <details><summary><span class="q">Q</span>상가 임대차 기간은 얼마나 보장되나요?</summary><p>최초 계약을 포함해 최대 10년까지 계약갱신을 요구할 수 있습니다. 갱신 요구는 만료 6개월 전부터 1개월 전까지 해야 합니다.</p></details>
+      <details><summary><span class="q">Q</span>사무실은 어떻게 찾아가나요?</summary><p>서울지하철 7호선 춘의역 6번 출구에서 도보 약 1분, 부천시 원미구 춘의동 123-56 1층입니다.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 채널 ===== -->
+<section class="section" id="channels">
+  <div class="container">
+    <div class="sec-head">
+      <span class="overline">Channels</span>
+      <h2>온라인 채널</h2>
+      <p>매물 소식과 지역 정보를 아래 채널에서도 볼 수 있습니다.</p>
+    </div>
+    <div class="channels">
+      <a class="channel" href="[입력:블로그URL]"><span class="no">01</span><b>블로그</b><span>매물·지역 정보</span></a>
+      <a class="channel" href="[입력:유튜브URL]"><span class="no">02</span><b>유튜브</b><span>매물 영상</span></a>
+      <a class="channel" href="[입력:홈페이지URL]"><span class="no">03</span><b>홈페이지</b><span>추천 매물</span></a>
+      <a class="channel" href="[입력:네이버인물URL]"><span class="no">04</span><b>네이버 인물정보</b><span>대표 이력</span></a>
+      <a class="channel" href="[입력:스마트플레이스URL]"><span class="no">05</span><b>스마트플레이스</b><span>위치·예약·리뷰</span></a>
+      <a class="channel" href="[입력:기타URL]"><span class="no">06</span><b>[기타 채널]</b><span>[설명]</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <h3><svg class="ico"><use href="#i-shield"/></svg>춘의역탑부동산공인중개사사무소</h3>
+        <p>부천 춘의역세권 아파트·단독주택·상가주택·상가·지식산업센터 중개. 대표 공인중개사가 상담부터 잔금까지 직접 진행합니다.</p>
+        <div class="ft-pledge"><b><svg class="ico sm"><use href="#i-doc"/></svg>정직한 광고 원칙</b>사실 확인이 되지 않은 과장 표현("최고", "수익 보장" 등)을 쓰지 않으며, 등기사항증명서와 실거래가로 확인한 정보만 제공합니다.</div>
+      </div>
+      <div class="ft-legal">
+        <div><small>상호 및 대표자</small><b>춘의역탑부동산공인중개사사무소</b><p>대표 공인중개사 김영월</p></div>
+        <div><small>소재지</small><b>경기도 부천시 원미구 춘의동 123-56 1층</b><p>7호선 춘의역 6번 출구 도보 1분</p></div>
+        <div><small>중개사무소 등록번호</small><b class="num">41190-2023-00214</b><p>사업자등록번호 [입력]</p></div>
+        <div><small>전화 · 손해배상책임 보장</small><b class="num"><a href="tel:0326835949" style="text-decoration:none">032-683-5949</a></b><p>[입력: 공제/보증보험·금액]</p></div>
+      </div>
+    </div>
+    <div class="copy"><span>© 2026 춘의역탑부동산공인중개사사무소</span><span><a href="#">개인정보처리방침</a></span></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="빠른 연락">
+  <a class="call" href="tel:0326835949"><svg class="ico"><use href="#i-phone"/></svg>전화 상담</a>
+  <a href="#booking"><svg class="ico"><use href="#i-cal"/></svg>예약</a>
+  <a href="[입력:카카오톡채널URL]"><svg class="ico"><use href="#i-chat"/></svg>카카오톡</a>
+  <a href="#location"><svg class="ico"><use href="#i-pin"/></svg>길찾기</a>
+</nav>
+
+<script>
+// ---- 중개보수 계산기 (단위: 원) ----
+var HOUSE_SALE=[[5e7,.006,25e4],[2e8,.005,80e4],[9e8,.004,0],[12e8,.005,0],[15e8,.006,0],[Infinity,.007,0]];
+var HOUSE_LEASE=[[5e7,.005,20e4],[1e8,.004,30e4],[6e8,.003,0],[12e8,.004,0],[15e8,.005,0],[Infinity,.006,0]];
+var $=function(id){return document.getElementById(id);};
+function won(n){return Math.round(n).toLocaleString('ko-KR')+'원';}
+function calc(){
+  var type=$('ctype').value, d=$('deal').value, a=(+$('amt').value||0)*1e4, r=(+$('rent').value||0)*1e4, monthly=d==='monthly', out=$('out');
+  $('rentF').style.display=monthly?'':'none';
+  if(!a&&!r){out.textContent='금액을 입력하세요.';return;}
+  var base=a, how='';
+  if(monthly){base=a+r*100;how='보증금 + 월세×100 = '+won(base);if(base<5e7){base=a+r*70;how='5천만원 미만 → 보증금 + 월세×70 = '+won(base);}}
+  if(type==='etc'){out.innerHTML=(how?how+'<br>':'')+'요율 0.9% 이내<br><span class="big">'+won(base*.009)+'</span> 이내 협의';return;}
+  var t=d==='sale'?HOUSE_SALE:HOUSE_LEASE,row;for(var i=0;i<t.length;i++){if(base<t[i][0]){row=t[i];break;}}
+  var fee=base*row[1];if(row[2]&&fee>row[2])fee=row[2];
+  out.innerHTML=(how?how+'<br>':'')+'요율 '+(row[1]*100).toFixed(1)+'%'+(row[2]?' (한도 '+won(row[2])+')':'')+'<br>상한 <span class="big">'+won(fee)+'</span>';
+}
+['ctype','deal','amt','rent'].forEach(function(id){$(id).addEventListener('input',calc);});calc();
+
+// ---- 상담 접수 폼 (서버 연결 전: 전화 안내) ----
+$('booking').addEventListener('submit',function(e){
+  e.preventDefault();
+  var box=$('fmsgbox'),n=$('fname').value.trim(),p=$('fphone').value.trim();
+  box.style.display='block';
+  if(!n||!p){box.textContent='성함과 연락처를 입력해 주세요.';return;}
+  if(!$('fagree').checked){box.textContent='개인정보 수집·이용에 동의해 주세요.';return;}
+  box.innerHTML='온라인 접수 기능은 연결 준비 중입니다. 지금은 <a href="tel:0326835949"><b>032-683-5949</b></a>로 전화 주시면 바로 상담해 드립니다.';
+});
+</script>
+<script src="assets/faq-data.js"></script>
+<script src="assets/chatbot.js"></script>
+</body>
+</html>

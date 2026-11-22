@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" font-family="Pretendard, 'Malgun Gothic', sans-serif">
+  <rect width="640" height="480" fill="#E9EEEC"/>
+  <rect x="40" y="40" width="560" height="400" rx="14" fill="none" stroke="#9FB3AC" stroke-width="2" stroke-dasharray="10 8"/>
+  <g transform="translate(320,210)" fill="none" stroke="#1E5B4F" stroke-width="5" stroke-linejoin="round">
+    <rect x="-60" y="-40" width="120" height="84" rx="10"/>
+    <circle cx="0" cy="2" r="24"/>
+    <rect x="-22" y="-54" width="44" height="14" rx="4"/>
+  </g>
+  <text x="320" y="310" font-size="22" font-weight="700" fill="#1E5B4F" text-anchor="middle">사무실 사진 자리</text>
+  <text x="320" y="340" font-size="15" fill="#4D6B62" text-anchor="middle">외관 1장 · 내부 1장 (가로 4:3, 1280×960 권장)</text>
+</svg>
